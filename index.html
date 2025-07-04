@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="QiChat - Advanced AI assistant for meaningful conversations">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>QiChat - Your AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="menu-bar">
+        <div class="logo">
+            <h1 class="app-title">QingChat</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link">Edumate</a></li>
+                <li><a href="#" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </button>
+    </header>
+    
+    <main class="home-container">
+        <div class="home-content">
+            <div class="logo-container" aria-hidden="true">
+                <i class="fas fa-robot logo-icon"></i>
+            </div>
+            <h1>Welcome to QingChat</h1>
+            <p class="description">Your intelligent AI companion for meaningful conversations.</p>
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                    <span>Advanced AI</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                    <span>Fast Responses</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Secure Chats</span>
+                </div>
+                
+            </div>
+            <a href="chat.html" class="ask-ai-btn" onclick="startChat(event)">
+                <span>Start Chatting</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </main>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="footer-info">
+                <p>Version: 1.0 | Designed by Ashikul Islam</p>
+                <p>© 2025 QingChat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+    function startChat(event) {
+        event.preventDefault();
+        const loadingOverlay = document.querySelector('.loading-overlay');
+        loadingOverlay.classList.add('active');
+        
+        setTimeout(() => {
+            window.location.href = 'chat.html';
+        }, 1000);
+    }
+    
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="QiChat - Advanced AI assistant for meaningful conversations">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>QingChat - AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sliding Menu -->
+        <aside class="chat-menu" id="chatMenu">
+            <div class="menu-header">
+                <a href="index.html" class="app-logo">QingChat</a>
+                <h2>Chat History</h2>
+                <button class="new-chat-btn">New Chat</button>
+            </div>
+            <div class="chat-history" id="chatHistory">
+                <!-- Chat history items will be dynamically added here -->
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-header">
+                <button class="menu-toggle" id="menuToggle">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+                <h1><a href="index.html" style="text-decoration: none; color: inherit;">QChat</a></h1>
+            </header>
+
+            <div class="messages" id="messages">
+                <!-- Messages will be dynamically added here -->
+            </div>
+
+            <!-- Typing Animation -->
+            <div class="typing-animation hidden" id="typingAnimation">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container">
+                <form id="messageForm">
+                    <div class="input-buttons">
+                        <label class="file-input-btn" for="fileInput">
+                            <i class="fas fa-paperclip"></i>
+                            <input type="file" id="fileInput" accept=".txt,.pdf,.doc,.docx,image/*" style="display: none;">
+                        </label>
+                        <button type="button" class="voice-input-btn" id="voiceInputBtn">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <textarea id="messageInput" placeholder="Type your message..." rows="1"></textarea>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <nav class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="footer-info">
+                <p>Version: 1.0 | Designed by Ashikul Islam</p>
+                <p>© 2025 QingChat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
